@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "エモクロア立ち絵ダウンローダー",
+  "version": "1.0",
+  "description": "キャラクターシートの閲覧ページで立ち絵表示部分にダウンロードボタンを追加します",
+  "permissions": [
+    "downloads"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://emoklore.charasheet.jp/view/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "host_permissions": [
+    "https://object-storage.tyo2.conoha.io/*"
+  ]
+}
